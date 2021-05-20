@@ -1,0 +1,45 @@
+.popupN {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    bottom: 10px;
+    right: 10px;
+    width: 250px;
+    height: 100px;
+    border: 1px solid #cdcdcd;
+    background-color: #fff;
+}
+.headerN {
+    background-color: #e6eeee;
+    border-bottom: 1px solid #cdcdcd;
+    color: black;
+    line-height: 30px;
+    text-align: center;
+}
+.messageN {
+    background-color: #ffffff;
+    color: black;
+    line-height: 60px;
+    text-align: center;
+}
+.popupN {
+    animation-duration: 3s;
+    animation-name: lowHide;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes lowHide {
+    from {
+        display: block;
+        opacity: 100%;
+    }
+
+    30% {
+        opacity: 100%;
+    }
+
+    to {
+        display: none;
+        opacity: 1%;
+    }
+}

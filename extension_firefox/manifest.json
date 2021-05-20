@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Converter: Azure to Jira",
+  "short_name": "Azure > Jira",
+  "description": "Extension to convert Azure time log summary to Jira Work log description",
+  "version": "1.0",
+  "icons": {
+    "128": "img/icon.png"
+  },
+  "background": {"scripts":["js/bg.js"]},
+  "content_scripts": [
+    {"js": ["js/main.js"], "css": ["css/extend_style_main.css"], "matches": ["https://dev.azure.com/*"]},
+    {"js": ["js/sub.js"], "css": ["css/extend_style_iframe.css"], "matches": [
+      "https://timelog.gallerycdn.vsassets.io/*",
+      "https://timelog.gallery.vsassets.io/*"
+    ], "all_frames":true}
+  ],
+  "browser_action": {
+    "default_title": "Azure to Jira Table",
+    "default_icon": "img/icon.png",
+    "default_popup": "html/popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "clipboardWrite"
+  ]
+}
